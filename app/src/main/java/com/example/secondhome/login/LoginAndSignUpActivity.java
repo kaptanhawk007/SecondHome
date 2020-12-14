@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.secondhome.R;
@@ -15,28 +16,51 @@ import com.google.android.material.textfield.TextInputLayout;
 public class LoginAndSignUpActivity extends AppCompatActivity {
     private TextInputEditText email,password;
     private Button btnLogin;
+    private TextView signUpTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_and_signp);
-
-        email=findViewById(R.id.emailInputField);
-        btnLogin=findViewById(R.id.btnLogin);
-        password=findViewById(R.id.passwordInputField);
+        init();
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (password.getText().toString().isEmpty()||email.getText().toString().isEmpty()){
-                    email.setError("Email Empty");
-                    password.setError("Password Empty");
-                    Toast.makeText(LoginAndSignUpActivity.this, "Password null", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(LoginAndSignUpActivity.this, email.getText(), Toast.LENGTH_SHORT).show();
-                }
+                validation();
             }
         });
+        
+        signUpTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: 12/14/2020 Create a fragment
+            }
+        });
+
+
+
+
+    }
+
+    void init(){
+        signUpTV=findViewById(R.id.signUpTV);
+        email=findViewById(R.id.emailInputField);
+        btnLogin=findViewById(R.id.btnLogin);
+        password=findViewById(R.id.passwordInputField);
+    }
+    boolean validation(){
+        if (email.getText().toString().isEmpty()){
+            email.setError("Email Can not be Empty");
+            return false;
+        }
+        if (password.getText().toString().isEmpty()){
+            password.setError("Password Can not be Empty");
+            return false;
+        }
+        if (password.getText().toString().length()<8){
+            password.setError("Password Must be of 8 character");
+        }
+        return true;
 
     }
 }
