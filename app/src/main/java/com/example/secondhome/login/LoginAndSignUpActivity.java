@@ -14,7 +14,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginAndSignUpActivity extends AppCompatActivity {
     private TextInputEditText email,password;
-    private Button btnPress;
+    private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +22,18 @@ public class LoginAndSignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_and_signp);
 
         email=findViewById(R.id.emailInputField);
-        btnPress=findViewById(R.id.btnPress);
+        btnLogin=findViewById(R.id.btnLogin);
         password=findViewById(R.id.passwordInputField);
-        btnPress.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (password.getText().toString().isEmpty()||email.getText().toString().isEmpty()){
                     email.setError("Email Empty");
                     password.setError("Password Empty");
                     Toast.makeText(LoginAndSignUpActivity.this, "Password null", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(LoginAndSignUpActivity.this, email.getText(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
