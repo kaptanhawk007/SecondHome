@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondHome">
-        <activity android:name=".login.LoginAndSignUpActivity"></activity>
+        <activity android:name=".PGActivity"
+            android:theme="@style/pgActivity"
+            >
+        </activity>
+        <activity android:name=".login.LoginAndSignUpActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

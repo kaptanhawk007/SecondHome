@@ -1,6 +1,7 @@
 
 package com.example.secondhome.login;
 
+import androidx.activity.OnBackPressedDispatcherOwner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -40,6 +41,11 @@ public class LoginAndSignUpActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     void init(){

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/parentCardView"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/main_Activity_CardView"
+            app:cardCornerRadius="10dp"
+            >
+            <ImageView
+                android:id="@+id/main_Activity_pgImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/zion_hotel"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/main_Activity_pgNameTV"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:textSize="15sp"
+            android:textColor="@color/textHeadingColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_Activity_CardView"
+            android:layout_alignParentStart="true"
+            android:text="PG NAME GOES HERE" />
+
+        <TextView
+            android:id="@+id/main_Activity_pgPriceTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8999 /-"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/textHeadingColor"
+            android:layout_below="@id/main_Activity_CardView"
+            android:layout_alignParentEnd="true"
+            android:textSize="20sp" />
+
+        <RatingBar
+            android:id="@+id/main_Activity_RatingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_Activity_pgNameTV"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:numStars="5"
+            android:progressTint="@color/Primary"
+            android:rating="3.5"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:stepSize=".5"
+            android:paddingBottom="5dp"
+            android:transformPivotX="0dp"
+            android:transformPivotY="0dp" />
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
